@@ -5,6 +5,9 @@
 
 
 let container = document.querySelector('.team-container');
+const btn = document.getElementById('addMemberButton');
+
+
 
 const profile = [
   {
@@ -39,7 +42,32 @@ const profile = [
   }
 ]
 
+staff();
+
+
+
+btn.addEventListener('click', function(){
+ 
+  const name = document.getElementById('name').value;
+  const job = document.getElementById('role').value;
+  const photo = document.getElementById('image').value;
+
   
+  const newWorker = 
+  {
+      name: name,
+      job: job,
+      photo: photo,
+  };
+
+  profile.push(newWorker);
+
+  container.innerHTML = '';
+
+  staff(profile);
+});
+
+function staff() {
   for(let i in profile){
 
     const card = profile[i];
@@ -63,8 +91,10 @@ const profile = [
           </div>
     `
 
-
   }
+  
+}
+
 
 
 
