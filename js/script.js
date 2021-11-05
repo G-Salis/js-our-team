@@ -64,14 +64,16 @@ btn.addEventListener('click', function(){
 
   container.innerHTML = '';
 
-  staff(profile);
+  staff();
 });
 
 function staff() {
   for(let i in profile){
 
     const card = profile[i];
+    console.log(card);
     const cardName = card.name;
+    console.log(cardName);
     const cardJob = card.job;
     const cardPhoto = card.photo;
 
